@@ -1,0 +1,34 @@
+<h1>Customers</h1>
+<!-- div>
+  Anz Customer: {{customers.length}}<br>
+  Ende<br>
+</div -->
+
+<!-- div>
+      AnfName <br><input type="text" name="beginningName" [ngModel]="minString"
+    (ngModelChange)="changeFilterStartDate($event)">
+
+</div>
+<div>
+    Rechnungsdatum bis<br><input type="date" name="fEndDate" [ngModel]="maxString"
+                                  (ngModelChange)="changeFilterEndDate($event)">
+</div -->
+
+<div>
+    AnfName
+    <input type="text" name="beginningName" size="27" [(ngModel)]="minString">
+    <br>
+    EndName
+    <input type="text" name="endingName" size="27" [(ngModel)]="maxString">
+    <br>
+    <button name="filter" id="filterCustomerName" (click)="filterCustomerNameClick()">
+        filterCustomerName
+    </button>
+</div>
+
+<div *ngFor="let customer of customers" style="width: 300px;">
+  <customer-details [customer]='customer'></customer-details>
+</div>
+<div style="margin-top:20px;">
+  <button type="button" class="button btn-danger" (click)='deleteCustomers()'>Delete All</button>
+</div>
